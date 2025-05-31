@@ -1,0 +1,120 @@
+---
+import dayjs from 'dayjs';
+import path from 'node:path';
+import Layout from '../layout/Layout.astro';
+import GoBackButton from '../components/GoBackButton.astro';
+import Link from '../components/Link.astro';
+import simpleGit, { type DefaultLogFields, type ListLogLine } from 'simple-git';
+import { linkToMyRepo } from '../utils/links.ts';
+
+type GitLogCommit = DefaultLogFields & ListLogLine;
+
+interface Props {
+  lastCommit: GitLogCommit | null;
+}
+
+export async function getStaticPaths() {
+  const git = simpleGit();
+  let lastCommit: GitLogCommit | null = null;
+  const file = path.join(process.cwd(), 'src', 'pages', 'now.astro');
+
+  try {
+    const log = await git.log({ file });
+    lastCommit = log.latest;
+  } catch (err) {
+    console.error(err);
+  }
+
+  return {
+    props: { lastCommit },
+  };
+}
+
+const { lastCommit } = Astro.props;
+---
+
+<Layout>
+  <GoBackButton />
+  <section>
+    <h1>Now</h1>
+    <p>Last update: {dayjs(lastCommit?.date).format('YYYY-MM-DD HH:mm')}</p>
+  </section>
+  <article>
+    <section>
+      <h2>What am I coding?</h2>
+      <p>I'm currently open to work.</p>
+      <p>
+        I'm studying back-end development with <Link
+          href='https://www.oracle.com/br/education/oracle-next-education/'
+          >Oracle Next Education
+        </Link>.
+      </p>
+      <p>
+        I'm also working on some side projects:
+        <ul>
+          <li>
+            <Link href={linkToMyRepo('wbonk')}>wbonk</Link>, an idempotent
+            GraphQL Relay Full Stack app
+          </li>
+          <li>Maintaining this blog and creating a writing habit</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <h2>What are my current interests?</h2>
+      <p>
+        I'm currently interested in learning more about the following topics:
+        <ul>
+          <li>Java & Spring ecosystem</li>
+          <li>Web front-end frameworks</li>
+          <li>System Design</li>
+          <li>Literature</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <h2>What am I doing now?</h2>
+      <p>
+        Some things that I'm doing now:
+        <ul>
+          <li>Running</li>
+          <li>Reading classic literature (especially Brazilian and Russian)</li>
+          <li>Hanging out with friends</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <h2>What am I reading now?</h2>
+      <p>
+        <ul>
+          <li>
+            Data Structures and Algorithms in JavaScript, by Loiane Groner
+          </li>
+          <li>
+            Crime and Punishment, by Fyodor Dostoyevsky (translated to pt-br by
+            Paulo Bezerra)
+          </li>
+        </ul>
+      </p>
+    </section>
+
+    <style>
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2x);
+      }
+
+      article section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing);
+      }
+
+      li {
+        list-style-type: disc;
+        margin-left: var(--spacing-2x);
+      }
+    </style>
+  </article>
+</Layout>

@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../layout/Layout.astro';
+import Link from '../components/Link.astro';
+import { GITHUB_REPO_URL, TWITTER_URL, GITHUB_PROFILE_URL } from '../config';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const postsSorted = posts.sort(
+  (a, b) =>
+    Math.floor(b.data.pubDate / 1000) - Math.floor(a.data.pubDate / 1000),
+);
+
+const year = new Date().getFullYear() - 2004;
+
+const links = [
+  [
+    { href: '/now', title: '/now' },
+    { href: '/til', title: '/til' },
+    { href: '/lists', title: '/lists' },
+    { href: '/tags', title: '/tags' },
+  ],
+];
+---
+
+<Layout>
+  <h1>Dantas' blog</h1>
+  <section class='description'>
+    <p>
+      I'm a {year} year old software engineer from Brazil. With interests in distributed
+      systems and web development in general. If you want to reach me, feel free
+      to contact on <Link href={TWITTER_URL}>Twitter</Link> or via <Link
+        href='mailto:gusdantas15@gmail.com'>email</Link
+      >.
+    </p>
+    <p>
+      If you want to see what I'm doing right now, you can check out my <Link
+        href='/now'>/now page</Link
+      >. On my <Link href={GITHUB_PROFILE_URL}>GitHub profile</Link> you can find
+      all the repositories that I'm working on, and on my <Link
+        href={GITHUB_REPO_URL}>blog repository</Link
+      > you can find the source code of this blog.
+    </p>
+    <p>
+      The blog is under <Link
+        href={`${GITHUB_REPO_URL}/blob/main/LICENSE`}
+        isExternal>GNU AGPLv3</Link
+      >
+      and <Link href={`${GITHUB_REPO_URL}/blob/main/LICENSE-posts`} isExternal
+        >CC BY-SA 4.0</Link
+      > licenses.
+    </p>
+  </section>
+  <section class='links'>
+    <h2>Links</h2>
+    <div>
+      {
+        links.map((section) => (
+          <ul>
+            {section.map((link) => (
+              <li>
+                <Link href={link.href}>{link.title}</Link>
+              </li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </section>
+  <section class='posts'>
+    <h2>Posts</h2>
+    <ul>
+      {
+        postsSorted.slice(0, 5).map((post) => (
+          <li>
+            <p>
+              <Link href={`/blog/${post.slug}`}>
+                {post.data.pubDate?.toISOString().split('T')[0]}{' '}
+                {post.data.title}
+              </Link>
+            </p>
+          </li>
+        ))
+      }
+      <li>
+        <Link href='/blog'>See all posts...</Link>
+      </li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .description {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-2x);
+  }
+
+  .posts ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  .posts :global(a) {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing);
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 425px) {
+    .posts ul {
+      gap: var(--spacing-2x);
+    }
+
+    .posts ul li {
+      flex-direction: column;
+    }
+  }
+
+  .links ul li {
+    margin-left: var(--spacing-2x);
+    list-style-type: disc;
+  }
+</style>
