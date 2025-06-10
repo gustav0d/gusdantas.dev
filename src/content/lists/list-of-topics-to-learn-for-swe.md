@@ -45,5 +45,7 @@ tags:
 
 ## Books to read
 
+- Antifragile: Things That Gain from Disorder by Nassim Taleb
+- Skin in the Game: Hidden Asymmetries in Daily Life by Nassim Taleb
 - Fundamentals of Software Architechture: An Engineering Approach by Mark Richards and Neal Ford
 - Software Architecture: The Hard Parts: Modern Trade-Off Analyses for Distributed Architectures by Neal Ford, Mark Richards, Pramod Sadalage and Zhamak Dehghani
