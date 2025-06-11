@@ -5,6 +5,8 @@ tags:
   - software-engineering
 ---
 
+- If this list feels a lot for you, start with [prerequisites for being an awesome dev](list-of-prerequisites-for-an-awesome-dev)
+
 ## Topics
 
 - Load balancing
