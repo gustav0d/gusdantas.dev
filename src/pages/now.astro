@@ -40,10 +40,8 @@ const { lastCommit } = Astro.props;
     <p>Last update: {dayjs(lastCommit?.date).format('YYYY-MM-DD HH:mm')}</p>
   </section>
   <section>
-    <p>
-      I'm currently working as a barista ☕, but I'm looking for new
-      opportunities as a software engineer.
-    </p>
+    <p>I'm currently working as a freelance software engineer.</p>
+    <p>I also work part time as a barista ☕</p>
   </section>
   <article>
     <section>
@@ -57,11 +55,13 @@ const { lastCommit } = Astro.props;
       <p>
         I'm also working on some side projects:
         <ul>
-          <li>
-            <Link href={linkToMyRepo('wbonk')}>wbonk</Link>, an idempotent
-            GraphQL Relay Full Stack app
-          </li>
           <li>Maintaining this blog and creating a writing habit</li>
+          <li>
+            <Link href={linkToMyRepo('next-medusa-strapi')}
+              >Next.js + Medusa E-commerce starter project</Link
+            > for understanding and building e-commerce applications
+          </li>
+          <li>Some open source repos that are awesome</li>
         </ul>
       </p>
     </section>
@@ -96,9 +96,7 @@ const { lastCommit } = Astro.props;
             Skin in the Game: Hidden Asymmetries in Daily Life, by Nassim
             Nicholas Taleb (translated to pt-br by Renato Brett)
           </li>
-          <li>
-            Data Structures and Algorithms in JavaScript, by Loiane Groner
-          </li>
+          <li>The Fall, by Albert Camus (translated to pt-br)</li>
           <li>
             Crime and Punishment, by Fyodor Dostoyevsky (translated to pt-br by
             Paulo Bezerra)
