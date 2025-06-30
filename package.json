@@ -10,7 +10,8 @@
     "astro": "astro",
     "format": "prettier --write .",
     "create:post": "tsx ./scripts/new-post.ts",
-    "create:til": "tsx ./scripts/generate-til.ts"
+    "create:til": "tsx ./scripts/generate-til.ts",
+    "create:weekly": "tsx ./scripts/weekly-update.ts"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",

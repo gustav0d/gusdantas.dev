@@ -3,8 +3,8 @@ import fs from 'fs';
 
 import { slugify } from './slugify';
 
-const getPostTemplate = () => {
-  const template = path.resolve(process.cwd(), 'scripts', 'post.template.md');
+export const getPostTemplate = (templateName = 'post.template.md') => {
+  const template = path.resolve(process.cwd(), 'scripts', templateName);
   const content = fs.readFileSync(template, { encoding: 'utf-8' });
 
   return content;
@@ -58,4 +58,6 @@ ${frontmatter}
   );
 };
 
-run();
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  run();
+}
