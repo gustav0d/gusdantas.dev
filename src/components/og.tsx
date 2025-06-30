@@ -43,14 +43,10 @@ export const og = ({ date = true, tags = true, ...props }: Props) => (
       >
         {tags ? (
           <p style={{ display: 'flex', gap: 8 }}>
-            {props.data.tags.map((tag, i) => (
-              <span key={i}>#{tag}</span>
-            ))}
+            {props.data.tags?.map((tag, i) => <span key={i}>#{tag}</span>)}
           </p>
         ) : null}
-        {date ? (
-          <p>{dayjs(props.data.createdAt).format('YYYY-MM-DD')}</p>
-        ) : null}
+        {date ? <p>{dayjs(props.data?.pubDate).format('YYYY-MM-DD')}</p> : null}
       </div>
     </div>
   </div>
