@@ -1,7 +1,8 @@
-import path from 'path';
-import fs from 'fs';
+import path from 'node:path';
+import fs from 'node:fs';
 
-import { slugify } from './slugify';
+import { slugify } from './slugify.ts';
+import { fileURLToPath } from 'node:url';
 
 export const getPostTemplate = (templateName = 'post.template.md') => {
   const template = path.resolve(process.cwd(), 'scripts', templateName);
