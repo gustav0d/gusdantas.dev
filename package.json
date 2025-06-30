@@ -9,9 +9,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "create:post": "tsx ./scripts/new-post.ts",
-    "create:til": "tsx ./scripts/generate-til.ts",
-    "create:weekly": "tsx ./scripts/weekly-update.ts"
+    "create:post": "node --experimental-strip-types ./scripts/new-post.ts",
+    "create:til": "node --experimental-strip-types ./scripts/generate-til.ts",
+    "create:weekly": "node --experimental-strip-types ./scripts/weekly-update.ts 'Weekly update'"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
@@ -49,7 +49,6 @@
     "rehype-pretty-code": "^0.13.2",
     "remark-math": "^6.0.0",
     "slugify": "^1.6.6",
-    "tsx": "^3.14.0",
     "unist-builder": "^4.0.0",
     "unist-util-modify-children": "^4.0.0",
     "unist-util-visit": "^5.0.0"

@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import { slugify } from './slugify';
+import { slugify } from './slugify.ts';
 
 const run = async () => {
   const dirRoot = path.resolve(process.cwd());
