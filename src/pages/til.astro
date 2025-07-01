@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 const til = await getCollection('til');
 const sortedTil = til.sort(
   (a, b) =>
-    Math.floor(b.data.createdAt / 1000) - Math.floor(a.data.createdAt / 1000),
+    Math.floor(b.data.createdAt / 1000) - Math.floor(a.data.createdAt / 1000)
 );
 ---
 
@@ -21,7 +21,7 @@ const sortedTil = til.sort(
     {
       sortedTil.map(async (item, i) => {
         const createdAt = dayjs(item.data.createdAt).format(
-          'YYYY/MM/DD ddd [-] hh:mm A',
+          'YYYY/MM/DD ddd [-] hh:mm A'
         );
         const { Content } = await item.render();
         return (
@@ -78,5 +78,12 @@ const sortedTil = til.sort(
   section.article :global(li) {
     list-style-type: initial;
     margin-left: var(--spacing-2x);
+  }
+
+  section.article :global(pre) {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
   }
 </style>
