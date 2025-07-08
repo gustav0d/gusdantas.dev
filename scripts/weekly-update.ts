@@ -18,7 +18,6 @@ const run = async () => {
     .filter((str) => str !== '---')
     .join('\n');
 
-  console.log('frontmatter', frontmatter);
   const createdAt = new Date();
 
   const fileTitle = slugify(title);
@@ -48,7 +47,6 @@ const run = async () => {
     .filter((file) => file.endsWith('-weekly-update.md'));
   const lastWeekFile = weeklyFiles[weeklyFiles.length - 1];
 
-  console.log('weekly files', weeklyFiles);
   let lastWeekSlug = `${lastWeekFile.slice(0, 10)}-weekly-update`;
 
   const data = `---
