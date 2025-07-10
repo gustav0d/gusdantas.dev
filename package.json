@@ -9,9 +9,10 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "create:post": "node --experimental-strip-types ./scripts/new-post.ts",
-    "create:til": "node --experimental-strip-types ./scripts/generate-til.ts",
-    "create:weekly": "node --experimental-strip-types ./scripts/weekly-update.ts 'Weekly update'"
+    "create:post": "pnpm n ./scripts/new-post.ts",
+    "create:til": "pnpm n ./scripts/generate-til.ts",
+    "create:weekly": "pnpm n ./scripts/weekly-update.ts 'Weekly update'",
+    "n": "node --experimental-strip-types --disable-warning='ExperimentalWarning'"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
