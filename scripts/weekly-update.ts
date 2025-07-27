@@ -40,10 +40,10 @@ const run = async () => {
     frontmatter += `\ntags:\n${tagsFormatted}`;
   }
 
-  const dirBlog = path.resolve(dirRoot, 'src', 'content', 'blog');
+  const blogDir = path.resolve(dirRoot, 'src', 'content', 'blog');
 
   const weeklyFiles = fs
-    .readdirSync(dirBlog)
+    .readdirSync(blogDir)
     .filter((file) => file.endsWith('-weekly-update.md'));
   const lastWeekFile = weeklyFiles[weeklyFiles.length - 1];
 
@@ -61,11 +61,15 @@ Since [last week](/blog/${lastWeekSlug}), I ...
 
 `;
 
+  const fileNameWithPath = path.resolve(blogDir, `${createdAt.toISOString()}-${fileTitle}.md`);
+
   fs.writeFileSync(
-    path.resolve(dirBlog, `${createdAt.toISOString()}-${fileTitle}.md`),
+    fileNameWithPath,
     data,
     { encoding: 'utf-8' },
   );
+
+  console.log(`Weekly update created: ${fileNameWithPath}`);
 };
 
 run();
