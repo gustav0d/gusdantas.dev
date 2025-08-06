@@ -7,6 +7,8 @@ tags:
   - beginner
 ---
 
+For now this is just a Computer Science roadmap, with time I'll add useful content that I use to learn
+
 - Digital Circuits
 - Discrete mathematics
 - Programming languages

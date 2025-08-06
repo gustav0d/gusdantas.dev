@@ -1,8 +1,7 @@
 ---
-title: 'List of useful TypeScript stuff'
+title: "List of useful stuff I found online and haven't organized it yet"
 tags:
   - list
-  - typescript
 ---
 
 - [Configuring TypeScript by TotalTypescript](https://www.totaltypescript.com/books/total-typescript-essentials/configuring-typescript)
