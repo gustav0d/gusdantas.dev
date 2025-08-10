@@ -33,7 +33,7 @@ const disableSitemap = ['/blog/drafts'];
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gustav0d.github.io',
+  site: 'https://gusdantas.dev',
   integrations: [
     sitemap({
       filter: (page) => {
