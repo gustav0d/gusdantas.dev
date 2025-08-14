@@ -70,8 +70,7 @@ const readingTime = remarkPluginFrontmatter.readingTime;
 <Layout
   ogImage={`/blog/${post.slug}/og.png`}
   head={{ title: `${post.data.title} | ${SITE.title}` }}
-  customLang={post.data.tags?.includes('pt-br') ? 'pt-BR' : 'en'}
->
+  customLang={post.data.tags?.includes('pt-br') ? 'pt-BR' : 'en'}>
   <GoBackButton />
 
   <section class='content'>

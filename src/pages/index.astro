@@ -7,7 +7,7 @@ import { GITHUB_REPO_URL, TWITTER_URL, GITHUB_PROFILE_URL } from '../config';
 
 const posts = await getCollection(
   'blog',
-  ({ data }) => !data.draft && !data?.tags?.includes('weekly')
+  ({ data }) => !data.draft && !data?.tags?.includes('weekly'),
 );
 const postsSorted = posts.sort(
   (a, b) =>

@@ -1,4 +1,8 @@
 {
+  "prettier.enable": true,
+  "biome.enabled": false,
+  "editor.formatOnSave": true,
+
   "files.exclude": {
     "**/*.vo": true,
     "**/*.vok": true,

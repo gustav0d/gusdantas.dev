@@ -61,13 +61,12 @@ Since [last week](/blog/${lastWeekSlug}), I ...
 
 `;
 
-  const fileNameWithPath = path.resolve(blogDir, `${createdAt.toISOString()}-${fileTitle}.md`);
-
-  fs.writeFileSync(
-    fileNameWithPath,
-    data,
-    { encoding: 'utf-8' },
+  const fileNameWithPath = path.resolve(
+    blogDir,
+    `${createdAt.toISOString()}-${fileTitle}.md`,
   );
+
+  fs.writeFileSync(fileNameWithPath, data, { encoding: 'utf-8' });
 
   console.log(`Weekly update created: ${fileNameWithPath}`);
 };

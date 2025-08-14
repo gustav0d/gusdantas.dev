@@ -31,8 +31,7 @@ const { Content } = await post.render();
 
 <Layout
   ogImage={`/lists/${post.slug}/og.png`}
-  head={{ title: `${post.data.title} | ${SITE.title}` }}
->
+  head={{ title: `${post.data.title} | ${SITE.title}` }}>
   <GoBackButton />
   <section>
     <h1>{post.data.title}</h1>

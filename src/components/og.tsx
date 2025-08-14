@@ -16,16 +16,14 @@ export const og = ({ date = true, tags = true, ...props }: Props) => (
       width: '100%',
       padding: '6% 8%',
       position: 'relative',
-    }}
-  >
+    }}>
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         width: '100%',
-      }}
-    >
+      }}>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <p style={{ fontSize: '12px', margin: 0, fontWeight: 300 }}>
           {SITE.website}
@@ -39,8 +37,7 @@ export const og = ({ date = true, tags = true, ...props }: Props) => (
           display: 'flex',
           justifyContent: 'space-between',
           width: '100%',
-        }}
-      >
+        }}>
         {tags ? (
           <p style={{ display: 'flex', gap: 8 }}>
             {props.data.tags?.map((tag, i) => <span key={i}>#{tag}</span>)}
