@@ -6,6 +6,7 @@ import GoBackButton from '../components/GoBackButton.astro';
 import Link from '../components/Link.astro';
 import simpleGit, { type DefaultLogFields, type ListLogLine } from 'simple-git';
 import { linkToMyRepo } from '../utils/links.ts';
+import { TWITTER_URL } from '../config.js';
 
 type GitLogCommit = DefaultLogFields & ListLogLine;
 
@@ -39,29 +40,30 @@ const { lastCommit } = Astro.props;
     <h1>Now</h1>
     <p>Last update: {dayjs(lastCommit?.date).format('YYYY-MM-DD HH:mm')}</p>
   </section>
-  <section>
-    <p>I'm currently working as a freelance software engineer.</p>
-  </section>
   <article>
     <section>
       <h2>What am I coding?</h2>
       <p>
-        Solving issues for
-        <Link href='https://feedback.house/'>Feedback House</Link>, using
-        MongoDB, Node.js, GraphQL, React, Relay.
+        I'm currently working as a software developer at
+        <Link href='https://beyondcompany.com.br/'> Beyond Co</Link>.
       </p>
-      <p>Creating a NF-e (Nota Fiscal Eletrônica) microservice using Node.js</p>
       <p>
-        I'm studying back-end development with Java & Spring on <Link
-          href='https://www.oracle.com/br/education/oracle-next-education/'
-          >Oracle Next Education
-        </Link>.
+        I <Link href={TWITTER_URL}>learn in public</Link>
+        and I also participate on tech communities on Discord:
+        <ul>
+          <li>sibelius' mentorship</li>
+          <li>Growly Group</li>
+        </ul>
       </p>
       <p>
         I'm also working on some side projects:
         <ul>
           <li>Maintaining this blog and creating a writing habit</li>
-          <li>Some open source repos that are awesome</li>
+          <li>
+            Building a
+            <Link href={linkToMyRepo('bunchat')}> chat application </Link> 4 fun
+            with Bun
+          </li>
         </ul>
       </p>
     </section>
@@ -70,9 +72,8 @@ const { lastCommit } = Astro.props;
       <p>
         I'm currently interested in learning more about the following topics:
         <ul>
-          <li>Software Engineering focused on back-end</li>
+          <li>Software Engineering & Architecture focused on back-end</li>
           <li>System Design</li>
-          <li>Java & Spring ecosystem</li>
           <li>Literature</li>
         </ul>
       </p>
