@@ -8,3 +8,5 @@ export const SITE = {
 export const GITHUB_PROFILE_URL = 'https://github.com/gustav0d';
 export const GITHUB_REPO_URL = `${GITHUB_PROFILE_URL}/gusdantas.dev`;
 export const TWITTER_URL = 'https://twitter.com/gusdantas';
+
+export const linkToMyRepo = (repo: string) => `${GITHUB_PROFILE_URL}/${repo}`;
