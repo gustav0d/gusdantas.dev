@@ -5,8 +5,7 @@ import Layout from '../layout/Layout.astro';
 import GoBackButton from '../components/GoBackButton.astro';
 import Link from '../components/Link.astro';
 import simpleGit, { type DefaultLogFields, type ListLogLine } from 'simple-git';
-import { linkToMyRepo } from '../utils/links.ts';
-import { TWITTER_URL } from '../config.js';
+import { linkToMyRepo, TWITTER_URL } from '../config.js';
 
 type GitLogCommit = DefaultLogFields & ListLogLine;
 
