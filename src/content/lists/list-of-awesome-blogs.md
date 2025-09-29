@@ -21,3 +21,5 @@ tags:
   - [How Discord indexes trillions of messages](https://discord.com/blog/how-discord-indexes-trillions-of-messages)
 - [Netflix Tech Blog](https://netflixtechblog.com/)
 - [Posthog](https://posthog.com/blog)
+- [Uber tech blog](https://www.uber.com/en-US/blog/engineering/)
+- [Nubank Engineering](https://building.nubank.com/pt-br/engineering-pt-br/)
