@@ -11,7 +11,6 @@
     "format": "prettier --write .",
     "create:post": "pnpm n ./scripts/new-post.ts",
     "create:til": "pnpm n ./scripts/generate-til.ts",
-    "create:weekly": "pnpm n ./scripts/weekly-update.ts 'Weekly update'",
     "n": "node --experimental-strip-types --disable-warning='ExperimentalWarning'"
   },
   "dependencies": {
