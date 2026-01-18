@@ -1,0 +1,22 @@
+---
+import GoBackButton from '../components/GoBackButton.astro';
+import Layout from '../layout/Layout.astro';
+import { links } from '../config.ts';
+import Link from '../components/Link.astro';
+---
+
+<Layout>
+  <GoBackButton />
+  <h1>Links</h1>
+  <section>
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <Link href={link.href}>{link.name}</Link>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
