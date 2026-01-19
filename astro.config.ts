@@ -74,6 +74,5 @@ export default defineConfig({
   },
   redirects: {
     ...(await getBlogRoutesRedirect()),
-    '/contact': 'https://bento.me/dantas',
   },
 });
