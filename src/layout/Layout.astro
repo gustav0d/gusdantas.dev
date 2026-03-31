@@ -1,4 +1,5 @@
 ---
+import '@fontsource/instrument-sans';
 import '@fontsource/instrument-serif';
 import { ClientRouter } from 'astro:transitions';
 
@@ -109,6 +110,7 @@ const rssFeedURL = new URL('rss.xml', Astro.site).href;
 
   html,
   body {
+    font-family: 'Instrument Sans', sans-serif;
     font-weight: 300;
     height: 100%;
     line-height: 1.5;
@@ -131,6 +133,7 @@ const rssFeedURL = new URL('rss.xml', Astro.site).href;
   h5,
   h6 {
     font-family: 'Instrument Serif', serif;
+    letter-spacing: 0.04em;
   }
 
   h1 {

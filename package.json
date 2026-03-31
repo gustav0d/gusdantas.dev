@@ -14,6 +14,7 @@
     "n": "node --experimental-strip-types --disable-warning='ExperimentalWarning'"
   },
   "dependencies": {
+    "@fontsource/instrument-sans": "^5.2.8",
     "@fontsource/instrument-serif": "^5.2.8",
     "@resvg/resvg-js": "^2.6.2",
     "astro": "^5.7.10",
